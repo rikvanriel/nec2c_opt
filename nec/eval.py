@@ -369,7 +369,7 @@ class NecEvaluator:
 			agt = use_agt
 		elif self.options.agt_correction or get_agt_scores :
 			if self.options.engine_takes_cmd_args:
-				self.handlePopen(sp.Popen([engine, engine_agt_input, engine_nec_output], cwd=wd))
+				self.handlePopen(sp.Popen([engine, "-i", engine_agt_input, "-o", engine_nec_output], cwd=wd))
 			else:
 				try:
 					f = open(exe_input,"wt")
@@ -386,7 +386,7 @@ class NecEvaluator:
 			if get_agt_scores:
 				return (nec_output,agt)
 		if self.options.engine_takes_cmd_args:
-			self.handlePopen(sp.Popen([engine, engine_nec_input, engine_nec_output], cwd=wd))
+			self.handlePopen(sp.Popen([engine, "-i", engine_nec_input, "-o", engine_nec_output], cwd=wd))
 		else:
 			try:
 				f = open(exe_input,"wt")
