@@ -92,7 +92,7 @@ class NecEvaluator:
 		finally:
 			file.close()
 		i=len(lines)-1
-		tests = "   AVERAGE POWER GAIN="
+		tests = "  AVERAGE POWER GAIN:"
 		testl = len(tests)
 		while i >0:
 			if lines[i][0:testl]==tests:
